@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Block Explorer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='block.css') }}">
+  </head>
+
+  <body>
+    <header>
+      <h1>Block Explorer</h1>
+    </header>
+    <table>
+      <tr>
+        <th>Block Index</th>
+        <td>{{ block.index }}</td>
+      </tr>
+      <tr>
+        <th>Timestamp</th>
+        <td>{{ block.timestamp }}</td>
+      </tr>
+      <tr>
+        <th>Previous Hash</th>
+        <td>{{ block.previous_hash }}</td>
+      </tr>
+      <tr>
+        <th>Proof</th>
+        <td>{{ block.proof }}</td>
+      </tr>
+    </table>
+
+    <table class="tx-table">
+      <tr>
+        <th colspan="4">Transactions</th>
+      </tr>
+      <tr>
+        <th>Transaction ID</th>
+        <th>Sender</th>
+        <th>Recipient</th>
+        <th>Amount</th>
+      </tr>
+      {% for transaction in block.transactions %}
+      <tr>
+        <td><a href="{{ url_for('view_transaction_page', transaction_id=transaction.id) }}">{{ transaction.id }}</a></td>
+        <td>{{ transaction.sender }}</td>
+        <td>{{ transaction.recipient }}</td>
+        <td>{{ transaction.amount }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

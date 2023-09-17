@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+
+body {
+  font-family: 'Teko';
+  font-size: large;
+  background-color: black;
+  color: white;
+}
+
+/* Transaction list containers */
+.transaction-list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px;
+  gap: 20px;
+}
+
+.pending-transaction-list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px;
+  gap: 20px;
+}
+
+/* Transaction lists */
+.transaction-list,
+.pending-transaction-list {
+  flex: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Transaction item */
+.transaction-item,
+.pending-transaction-item {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+  font-family: 'Chakra Petch';
+  background-color: #444;
+  color: white;
+}
+
+/* Transaction item title */
+.transaction-item-title,
+.pending-transaction-item-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* Transaction item details */
+.transaction-item-details,
+.pending-transaction-item-details {
+  margin-top: 10px;
+  font-size: 16px;
+  color: white;
+  line-height: 1.5;
+}
+
+/* Transaction item detail label */
+.transaction-item-detail-label,
+.pending-transaction-item-detail-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+/* Transaction item detail value */
+.transaction-item-detail-value,
+.pending-transaction-item-detail-value {
+  margin-left: 5px;
+  word-wrap: break-word;
+}
+
+/* Style for links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Pagination styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-link {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.pagination-link.active {
+  font-weight: bold;
+}
+
+/* Remove default margin and padding */
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Pagination styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  list-style-type: none; /* Add this line */
+}
+
+.pagination-link {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.pagination-link.active {
+  font-weight: bold;
+}

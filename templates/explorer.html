@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TKBchain Explorer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='explorer.css') }}">
+</head>
+<body>
+  <main>
+    <center><h1>TKBchain Explorer</h1></center>
+    <div class="transaction-list-container">
+      <ul class="transaction-list">
+        <center><h2>Recent Transactions</h2></center>
+        {% for transaction in transactions %}
+        <li class="transaction-item">
+          <div class="transaction-item-title">
+            <a href="{{ url_for('view_transaction_page', transaction_id=transaction.id) }}">Transaction ID: {{ transaction.id }}</a>
+          </div>
+          <div class="transaction-item-details">
+            <span class="transaction-item-detail-label">Sender:</span>
+            <span class="transaction-item-detail-value">{{ transaction['sender'] }}</span>
+          </div>
+          <div class="transaction-item-details">
+            <span class="transaction-item-detail-label">Recipient:</span>
+            <span class="transaction-item-detail-value">{{ transaction['recipient'] }}</span>
+          </div>
+          <div class="transaction-item-details">
+            <span class="transaction-item-detail-label">Amount:</span>
+            <span class="transaction-item-detail-value">{{ transaction['amount'] }}</span>
+          </div>
+          <div class="transaction-item-details">
+            <span class="transaction-item-detail-label">Timestamp:</span>
+            <span class="transaction-item-detail-value">{{ transaction['timestamp'] }}</span>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <ul class="pending-transaction-list">
+        <center><h2>Pending Transactions</h2></center>
+        {% for transaction in pending_transactions %}
+        <li class="transaction-item pending">
+          <div class="transaction-item-title">
+            [PENDING]Transaction ID: {{ transaction['id'] }}
+          </div>
+          <div class="transaction-item-details">
+            <span class="transaction-item-detail-label">Sender:</span>
+            <span class="transaction-item-detail-value">{{ transaction['sender'] }}</span>
+          </div>
+          <div class="transaction-item-details">
+            <span class="transaction-item-detail-label">Recipient:</span>
+            <span class="transaction-item-detail-value">{{ transaction['recipient'] }}</span>
+          </div>
+          <div class="transaction-item-details">
+            <span class="transaction-item-detail-label">Amount:</span>
+            <span class="transaction-item-detail-value">{{ transaction['amount'] }}</span>
+          </div>
+          <div class="transaction-item-details">
+            <span class="transaction-item-detail-label">Timestamp:</span>
+            <span class="transaction-item-detail-value">{{ transaction['timestamp'] }}</span>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+
+    </div>
+    {% if total_pages > 1 %}
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        {% if page > 1 %}
+        <li class="page-item"><a class="pagination-link" href="?page={{ page - 1 }}">Previous</a></li>
+        {% endif %}
+        {% for i in range(1, total_pages + 1) %}
+        {% if i == page %}
+        <li class="page-item active"><a class="pagination-link" href="#">{{ i }}</a></li>
+        {% else %}
+        <li class="page-item"><a class="pagination-link" href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if page < total_pages %}
+        <li class="page-item"><a class="pagination-link" href="?page={{ page + 1 }}">Next</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+    {% endif %}
+  </main>
+</body>
+</html>

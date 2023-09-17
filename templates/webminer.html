@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TKB Chain Miner</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='webminer.css') }}">
+  </head>
+  <body>
+    <h1>TKB Chain Miner</h1>
+    <label for="threadsInput">Amount of threads to use (empty for 1): </label>
+    <input type="number" id="threadsInput" name="threads" value="1">
+    <br>
+    <label for="username">Enter your username (CASE SENSITIVE!): </label>
+    <input type="text" id="username" name="username">
+    <br>
+    <button id="startButton">Start Mining</button>
+    <button id="stopButton" disabled>Stop Mining</button>
+    <label for="attemptsPerSecond">Attempts per second: </label>
+    <span id="attemptsPerSecond">0.00</span>
+    <p></p>
+    <label for="output">Output:</label>
+    <p></p>
+    <div id="output"></div>
+    <button id="exportButton">Export</button>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='webminer.js') }}"></script>
+  </body>
+</html>

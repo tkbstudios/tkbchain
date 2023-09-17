@@ -1,0 +1,93 @@
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+  
+h1 {
+    color: #ffcc00;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px #333;
+}
+
+label {
+    color: #fff;
+}
+
+input[type="number"] {
+    background-color: #3d3d3d;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    width: 5%;
+}
+input[type="text"] {
+    background-color: #3d3d3d;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    width: 15%;
+}
+
+button {
+    background-color: #ffcc00;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #333;
+    transition: all 0.3s ease-in-out;
+}
+
+button.green {
+    background-color: green;
+}
+  
+button.red {
+    background-color: red;
+}
+
+button:hover {
+    background-color: #f2b73d;
+    box-shadow: 2px 2px 6px #333;
+    transform: translate(1px, 1px);
+}
+
+#output {
+    max-height: 100px;
+    overflow: auto;
+    transition: all 0.3s ease-in-out;
+    height: 100px;
+    width: 80%;
+    overflow-y: scroll;
+}
+
+#output p {
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease-in-out;
+}
+
+#output p.added {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#output p.removed {
+    opacity: 0;
+    transform: translateY(-20px);
+}

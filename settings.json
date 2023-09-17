@@ -1,0 +1,9 @@
+{
+    "SOCKET_BIND_IP": "0.0.0.0",
+    "SOCKET_BIND_PORT": 5001,
+    "DEFAULT_DIFFICULTY": 3,
+    "BLOCK_MINED_DEFAULT_REWARD_AMOUNT": 0.1,
+    "BASE_TRANSACTION_FEE": 0.01,
+    "ADMIN_USER": "admin",
+    "ADMIN_PASSWORD": "admin_password"
+}
